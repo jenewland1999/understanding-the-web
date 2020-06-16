@@ -1,0 +1,55 @@
+.utw-box-model {
+  margin: 2em 0;
+
+  &__margin,
+  &__border,
+  &__padding,
+  &__content {
+    background-color: #eeeeee;
+    border: 0.25em dashed transparent;
+    color: $bs-color__text;
+    height: 100%;
+    font-size: 1.5rem;
+    padding: 2em;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    &::before {
+      display: inline-block;
+      left: 0;
+      position: absolute;
+      width: inherit;
+    }
+  }
+
+  &__margin {
+    border-color: #cccccc;
+    &::before {
+      content: "Margin";
+      top: 1.8%;
+    }
+  }
+  &__border {
+    background-color: $color__primary;
+    color: $color__white;
+    &::before {
+      content: "Border";
+      top: 2.5%;
+    }
+  }
+  &__padding {
+    &::before {
+      content: "Padding";
+      top: 3.7%;
+    }
+  }
+  &__content {
+    background-color: $bs-color__text;
+    border-color: $color__primary--light;
+    color: $color__white;
+    &::before {
+      content: "Content";
+      position: static;
+    }
+  }
+}

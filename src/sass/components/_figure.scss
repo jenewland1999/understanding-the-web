@@ -1,0 +1,19 @@
+.utw-figure {
+  &__img {
+    height: auto;
+    margin-bottom: 0.5em;
+    width: 100%;
+  }
+
+  &--float-left {
+    float: left;
+    margin-right: 1em;
+    max-width: 150px;
+  }
+
+  &--float-right {
+    float: right;
+    margin-left: 1em;
+    max-width: 150px;
+  }
+}

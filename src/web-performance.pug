@@ -1,0 +1,26 @@
+extends layout.pug
+
+block prepend title
+  - const title = "Web Performance"
+
+block append stylesheets
+  block append stylesheets
+  link(rel="stylesheet" href=path + "static/stylesheets/bundle.min.css")
+
+block content
+  main.utw-content.utw-container
+    section.utw-container.utw-px-0
+      article.utw-article
+        h2.utw-article__title#web-performance Web Performance
+        em.utw-article__tagline Zoom! Zoom! Zoom!
+        p.utw-article__paragraph.
+          Performance on the world wide web (WWW) is critically important for making it an accessible and enjoyable experience for the end user. Nobody wants to sit in front of their internet enabled device waiting a minute for a web page to load. They’ll be bored after about 30 seconds and leave. Therefore, you loose traffic on your website, and for those that live in less internet-accessible countries such as Gambia, Africa or Cuba, North America where internet speeds are awfully slow it’s likely that those pages wont even load.
+        h3.utw-article__heading#user-factors-of-performance Factors of Performance - The User
+        ul.utw-article__list
+          li #[strong Web Browser] - The web browser plays a big role in the user-side performance of website loading. If you’re using something such as Internet Explorer 9 not only will you experience a considerably slower speed over something like Google Chrome or Mozilla Firefox but you’ll also loose a lot of compatibility with most sites therefore making it near impossible to navigate or in some cases not work at all.
+          li #[strong Download Speed] - As mentioned previously, broadband speed can vary quite drastically just based on where you live in a country let alone in a different continent altogether. This is why a lot of very big sites, Google, Yahoo, YouTube are extremely well written and checked for performance often as without these assurances sites would be clunky and in some cases inaccessible. Which isn’t good. Most of the world use Broadband or ADSL these days but there are still some very old and used implementations of dial-up around the world. Which at a 56kb speed is not going to make much of the web accessible to you
+          li #[strong Hardware] - Not everyone can afford flashy new tech, especially in third world countries so it’s important that the website is fast and as least resource intensive as possible especially when javascript is concerned
+        h3.utw-article__heading#server-factors-of-performance Factors of Performance - The Server
+        ul.utw-article__list
+          li #[strong Bandwidth] - When running any sort of website, especially on larger scales it’s important to consider your bandwidth amount available to you through your service provider. For example, if you’ve got a very popular blog that has a lot of views you might find that the service is un responsive and slow to load due to the traffic the site is receiving. So it’s important to take this into consideration when deploying web services. How much bandwidth you have and will potentially need.
+          li #[strong File Size] - When making any sort of website you’ll have to be extremely considerate of file size. Not only will larger files take ages to load, especially images, but it will also just slow everything down and be taking up additional storage on the server. Some of the ways you can solve this is by converting images to .PNG, .GIF and .JPG format and in some cases to use a Scalable Vector Graphic (SVG) instead as it’ll be infinitely scalable and small in size because it’s mathematical based graphics rather than individual pixels each with defined data to them.

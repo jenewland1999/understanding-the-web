@@ -1,0 +1,50 @@
+.utw-hero {
+  &__image {
+    background-attachment: fixed;
+    background-color: $color__primary;
+    background-image: url("../images/background.jpg");
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+    max-width: 1600px;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &::after {
+      background-color: rgba(45, 45, 45, 0.65);
+      content: "";
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    color: $color__white;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__heading {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    max-width: 360px;
+  }
+
+  &__excerpt {
+    margin-bottom: 3em;
+  }
+
+  &__featured {
+    background-color: $color__white;
+    position: relative;
+    transform: skewY(8deg) translateY(50%);
+    z-index: 1;
+  }
+}

@@ -1,0 +1,62 @@
+// .utw-section {
+//   flex: 0 0 48%;
+//   margin: 1%;
+//   padding: 1.5em;
+
+//   &__icon {
+//     display: block;
+//     font-size: 125px;
+//     line-height: 1.2;
+//     margin: 0 auto 0.125em;
+//     text-align: center;
+//   }
+
+//   @supports (grid-area: auto) {
+//     margin: 0;
+//     padding: 0;
+//
+//   }
+
+.utw-section {
+  &--hero {
+    display: block;
+    max-width: 420px;
+    padding: 10em 0 0;
+  }
+  &--body {
+    display: grid;
+    grid-template-columns: auto 3fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "image title"
+      "image body"
+      "image btn";
+    column-gap: 1em;
+  }
+
+  &__icon {
+    align-self: center;
+    font-size: 150px;
+    grid-area: image;
+    margin: 0;
+  }
+
+  &__heading {
+    grid-area: title;
+  }
+
+  &__excerpt {
+    grid-area: body;
+  }
+
+  .utw-btn {
+    grid-area: btn;
+    justify-self: start;
+  }
+
+  &--footer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+}

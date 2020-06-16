@@ -1,0 +1,73 @@
+.utw-featured {
+  padding: 5em 0;
+  transform: skewY(-8deg) translateY(-50%);
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    padding: 1em;
+
+    &:nth-of-type(1) a:active ion-icon,
+    &:nth-of-type(1) a:focus ion-icon,
+    &:nth-of-type(1) a:hover ion-icon {
+      color: $color__html;
+    }
+
+    &:nth-of-type(2) a:active ion-icon,
+    &:nth-of-type(2) a:focus ion-icon,
+    &:nth-of-type(2) a:hover ion-icon {
+      color: $color__css;
+    }
+
+    &:nth-of-type(3) a:active ion-icon,
+    &:nth-of-type(3) a:focus ion-icon,
+    &:nth-of-type(3) a:hover ion-icon {
+      color: $color__performance;
+    }
+
+    &:nth-of-type(4) a:active ion-icon,
+    &:nth-of-type(4) a:focus ion-icon,
+    &:nth-of-type(4) a:hover ion-icon {
+      color: $color__security;
+    }
+  }
+
+  &__link {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 0.0625em solid #e9e9ea;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+    color: $color__primary;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 1.5em;
+    text-align: center;
+    transition: box-shadow 0.15s ease-in-out, color 0.15s ease-in-out;
+    &:active,
+    &:focus,
+    &:hover {
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
+      color: $color__primary;
+      outline: 0;
+      text-decoration: none;
+    }
+  }
+
+  &__link-icon {
+    font-size: 4rem;
+    line-height: 1;
+    margin: 0.125em 0 0.375em;
+    transition: color 0.15s ease-in-out;
+  }
+  &__link-heading {
+  }
+  &__link-excerpt {
+  }
+}

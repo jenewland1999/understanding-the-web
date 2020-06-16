@@ -1,0 +1,38 @@
+extends layout.pug
+
+block prepend title
+  - const title = "Web Security"
+
+block append stylesheets
+  link(rel="stylesheet" href=path + "static/stylesheets/bundle.min.css")
+
+block content
+  main.utw-content.utw-container
+    section.utw-container.utw-px-0
+      article.utw-article
+        h2.utw-article__title#web-security Web Security
+        em.utw-article__tagline Think of it like Covid-19 lockdowns, but for computers.
+        p.utw-article__paragraph.
+            Security is the second biggest factor to the world wide web of today and certainly the most important, especially when eCommerce and online banking are concerned. Whether it be keeping personal details or traffic between you and the server protected from being intercepted and manipulated.
+        h3.utw-article__heading#risks-of-the-web Risks of the Web
+        p.utw-article__paragraph.
+            There are so many potential security risks in the web. Everything from XSS (Cross Site Scripting) to identity theft of personal details and passwords. All of these are considered a criminal offence, but not all of them are really accounted for since it’s so common and only really becomes a criminal investigation if it concerns a major organisation or enterprise. Here’s a more in-depth look at the different security risks on the web today;
+        h4.utw-article__sub-heading#cross-site-scripting-xss XSS (Cross Site Scripting)
+        p.utw-article__paragraph.
+            XSS or Cross Site Scripting, as it’s usually referred to as, is a crippling flaw in the use of web forms around the web. If a security mechanism isn’t put into place this can be a major hole for hackers to take advantage of. Everything that comes in from an input field should always be treated as a plain string with code such as #[code.utw-code &lt;script&gt;alert('Simple XSS');&lt;/script&gt;] not being executed and therefore preventing XSS.
+        p.utw-article__paragraph.
+            A short while ago TweetDeck, a Twitter client used by professionals and experienced computer users experienced this very security flaw. Bellow I’ve included the code that the very XSS hack used to make Twitter’s first self-re-tweeting tweet.
+        p: code.utw-code.
+             &lt;script class=&quot;xss&quot;&gt;$('.xss').parents().eq(1).find('a').eq(1).click();$('&#91;data-action=retweet&#93;').click();alert('XSS in Tweetdeck')&lt;/script&gt;
+        h4.utw-article__sub-heading#open-ports Open Ports
+        p.utw-article__paragraph.
+            Open ports are another major security flaw in the web of today. They’re able to attack the server side or client side through a port left open in the network ultimately leaving a back door open in the system allowing hackers to get in and cause all kinds of harm.
+        h3.utw-article__heading#prevention-mechanisms-for-security-flaws Prevention Mechanisms for Security Flaws
+        p.utw-article__paragraph.
+            Preventing these types of security flaws isn’t always the easiest and even when it is an easy prevention forgetting one character or symbol in your code could leave a large flaw in the system without even realising it. So, it’s crucial to double check your work as well as have additional security measures in place if this should happen.
+        p.utw-article__paragraph.
+            Furthermore, here are a few additional methods to preventing some flaws in web security both for the client and the server side administrator;
+        ul
+            li #[strong Firewall] - Having a firewall in place will block all additional open ports as well as monitor activity coming in and leaving the network.
+            li #[strong Secure Socket Layer (SSL)] - SSL is responsible for providing web pages with that HTTPS protocol, which people often recognise by the green padlock in the browsers web address bar. It provides a secure link between the client and the server using public and private key pairs generated using a hashing algorithm known as sha-2048 or sha-4096.
+            li #[strong Following Standards] - When it comes to standards it’s important that any site where there are user accounts, especially those of a online bank or eCommerce site, use strong passwords (including both lower and uppercase alphanumeric characters and symbols of a length of about 8 characters or more) as well as other security mechanisms like two factor authentication and human verification.

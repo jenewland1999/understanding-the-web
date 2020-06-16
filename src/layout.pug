@@ -1,0 +1,149 @@
+- const path = window.location.href === "https://jenewland.github.io/understanding-the-web" ? "/understanding-the-web/" : "/docs/";
+- 
+  const cards = [
+    {
+      id: 1,
+      slug: "what-is-html",
+      icon: "logo-html5", 
+      heading: "What is HTML?",
+      excerpt: "Hypertext Mark-up Language or HTML, as it's more commonly referred to as, is the standardized language responsible for display..."
+    },
+    {
+      id: 2,
+      slug: "what-is-css",
+      icon: "logo-css3",
+      heading: "What is CSS?",
+      excerpt: "Cascading Style Sheets (CSS) is the technology behind creating a styled and well-presented web. It's responsible for layout, style..."
+    },
+    {
+      id: 3,
+      slug: "web-performance", 
+      icon: "flash", 
+      heading: "Web Performance",
+      excerpt: "Performance on the world wide web (WWW) is critically important for making it an accessible and enjoyable experience for..."
+    },
+    {
+      id: 4, 
+      slug: "web-security", 
+      icon: "lock-closed", 
+      heading: "Web Security",
+      excerpt: "Security is the second biggest factor to the world wide web of today and certainly the most important, especially when..."
+    }
+  ]
+
+- const author = "@jenewland1999"
+- const description = "Understanding The Web is a static website created for a first-year college assignment. The purpose of this website is to inform users, at an introductory level, about HTML, CSS, web performance and web security."
+- const image = "https://jenewland1999.github.io/understanding-the-web/static/images/splash-min.png"
+- const url = "https://jenewland1999.github.io/understanding-the-web"
+
+mixin featured-card(id, slug, icon, heading, excerpt)
+  li.utw-featured__item
+    a.utw-featured__link(href=path + "articles/" + slug + ".html")
+      ion-icon(class="utw-featured__link-icon" name=icon)
+      h3.utw-featured__link-heading= heading
+      p.utw-featured__link-excerpt= excerpt
+
+doctype
+html(lang="en" prefix="og: https://ogp.me/ns#")
+  head
+    //- Required Meta Tags
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover")
+
+    block title
+      title #{title} | Understanding The Web
+
+    //- Scripts (JS)
+    block scripts
+      //- Ionicons v5.0.0
+      script(src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js")
+
+    //- Stylesheets (CSS)
+    block stylesheets
+      //- Google Fonts (OpenSans 300, 300i 400, 600)
+      link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap")
+
+    //- SEO - Primary
+    meta(name="author" content=author)
+    meta(name="description" content=description)
+    meta(name="title" content=title + " | Understanding The Web")
+
+    //- SEO - Sitemap
+    link(rel="sitemap" type="application/xml" href=path + "sitemap.xml")
+
+    //- SEO - OpenGraph / Facebook
+    meta(property="og:type" content="website")
+    meta(property="og:url" content=url)
+    meta(property="og:title" content=title + " | Understanding The Web")
+    meta(property="og:description" content=description)
+    meta(property="og:image" content=image)
+
+    //- SEO - Twitter
+    meta(property="twitter:card" content="summary")
+    meta(property="twitter:url" content=url)
+    meta(property="twitter:title" content=title + " | Understanding The Web")
+    meta(property="twitter:description" content=description)
+    meta(property="twitter:image" content=image)
+
+    //- Icons
+    link(rel="apple-touch-icon" sizes="180x180" href="static/images/icons/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="static/images/icons/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="static/images/icons/favicon-16x16.png")
+    link(rel="manifest" href=path + "site.webmanifest")
+    link(rel="mask-icon" color="#003B6F" href=path + "static/images/icons/safari-pinned-tab.svg")
+    link(rel="shortcut icon" href=path + "favicon.ico")
+    meta(name="msapplication-TileColor" content="#ffffff")
+    meta(name="msapplication-config" content=path + "browserconfig.xml")
+    meta(name="theme-color" content="#003B6F")
+  body.utw-page
+    .utw-page__header
+      header.utw-header
+        section.utw-header__navbar
+          .utw-navbar.utw-container
+            a.utw-navbar__brand(href=path)
+              h1.utw-brand Understanding The Web
+            .utw-navbar__nav
+              nav.utw-nav
+                ul.utw-nav__list
+                  li.utw-nav__item: a.utw-nav__link(href=path + "articles/what-is-html.html") #[span HTML]
+                  li.utw-nav__item: a.utw-nav__link(href=path + "articles/what-is-css.html") #[span CSS]
+                  li.utw-nav__item: a.utw-nav__link(href=path + "articles/web-performance.html") #[span Performance]
+                  li.utw-nav__item: a.utw-nav__link(href=path + "articles/web-security.html") #[span Security]
+        section.utw-header__hero
+          .utw-hero
+            section.utw-hero__image
+            section.utw-hero__content.utw-container
+              section.utw-section.utw-section--hero
+                h2.utw-hero__heading Understanding The Web
+                p.utw-hero__excerpt.
+                  Understanding The Web is a static website created for a first-year college assignment. The purpose of this website is to inform users, at an introductory level, about HTML, CSS, web performance and web security.
+                a.utw-btn.utw-btn--primary.utw-btn--lg.utw-mr-2(href="#what-is-html").
+                  Learn More
+                a.utw-btn.utw-btn--white.utw-btn--outline.utw-btn--lg(href="https://github.com/jenewland1999/understanding-the-web").
+                    View Source
+        
+          section.utw-hero__featured
+            .utw-featured.utw-container
+              ul.utw-featured__list
+                each card in cards
+                  +featured-card(card.id, card.slug, card.icon, card.heading, card.excerpt)
+                
+    .utw-page__content
+      block content
+    .utw-page__footer
+      footer.utw-footer.utw-container
+        section.utw-section.utw-section--footer
+          p.utw-footer__author.
+            Crafted with 💜 by Jordan.
+          p.utw-footer__credits.
+            This project is made possible through open-source/free-to-use resources such as #[a.utw-footer__link(href="https://fonts.google.com/") Google Fonts] and #[a.utw-footer__link(href="https://ionicons.com/") Ionicons]. 
+          p.utw-footer__copyright &copy; 2020 Jordan Newland - Code released under #[a.utw-footer__link(href="https://github.com/jenewland1999/undertanding-the-web/LICENSE") MIT].
+        section.utw-section.utw-section--footer
+          nav.utw-footer__nav
+            ul.utw-footer-nav__list
+              li.utw-footer-nav__item
+                a.utw-footer-nav__link(href="https://github.com/jenewland1999" aria-label="Follow @jenewland1999 on GitHub"): ion-icon(name="logo-github" aria-hidden="true")
+              li.utw-footer-nav__item
+                a.utw-footer-nav__link(href="https://linkedin.com/in/jenewland1999" aria-label="Connect with @jenewland1999 on LinkedIn"): ion-icon(name="logo-linkedin" aria-hidden="true")
+              li.utw-footer-nav__item
+                a.utw-footer-nav__link(href="https://twitter.com/jenewland1999" aria-label="Follow @jenewland1999 on Twitter"): ion-icon(name="logo-twitter" aria-hidden="true")

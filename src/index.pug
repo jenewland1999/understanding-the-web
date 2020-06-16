@@ -1,0 +1,58 @@
+extends layout.pug
+
+mixin section(numId, id, name, text, slug, icon, color, alt)
+  section(id=id class='utw-section utw-section--body')
+    ion-icon(class="utw-section__icon" name=icon style="color:" + color + ";")
+    h3.utw-section__heading= name
+    p.utw-section__excerpt= text
+    a.utw-btn.utw-btn--primary(href=path + "articles/" + slug + ".html") View Full Article
+
+block prepend title
+  - const title = "Homepage"
+
+block append stylesheets
+  link(rel="stylesheet" href=path + "static/stylesheets/bundle.min.css")
+
+block content 
+  - 
+    const articles = [
+      {
+        numId: 0, 
+        id:"html", 
+        name:"What is Html?", 
+        text:"Hypertext Mark-up Language or HTML, as it’s more commonly referred to as, is the standardized language responsible for display this and every other web page on the World Wide Web (WWW). It gives the initial layout to the page and describes the content on the web page...",
+        slug:"what-is-html", 
+        icon:"logo-html5", 
+        color:"#e44d26"
+      }, 
+      {
+        numId: 1, 
+        id:"css", 
+        name:"What is CSS?", 
+        text:"Cascading Style Sheets (CSS) is the technology behind creating a styled and well-presented web. It’s responsible for layout, style and dimensions of all elements on a web page on the World Wide Web...", 
+        slug:"what-is-css", 
+        icon:"logo-css3", 
+        color:"#1473ba"
+      }, 
+      {
+        numId: 2, 
+        id:"performance", 
+        name:"Web Performance", 
+        text:"Performance on the world wide web (WWW) is critically important for making it an accessible and enjoyable experience for the end user. Nobody wants to sit in front of their internet enabled device waiting a minute for a web page to load...", 
+        slug:"web-performance", 
+        icon:"flash", 
+        color:"#ffc901"
+      }, 
+      {
+        numId: 3, 
+        id:"security", 
+        name:"Web Security", 
+        text:"Security is the second biggest factor to the world wide web of today and certainly the most important, especially when eCommerce and online banking are concerned. Whether it be keeping personal details or...", 
+        slug:"web-security", 
+        icon:"lock-closed", 
+        color:"#00a652"
+      } 
+    ]
+  main.utw-content.utw-content--cols-2.utw-container
+    each article in articles
+      +section(article.numId, article.id, article.name, article.text, article.slug, article.icon, article.color)

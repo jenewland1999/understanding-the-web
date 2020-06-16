@@ -1,0 +1,65 @@
+.utw-btn {
+  @extend %utw-btn;
+
+  &--block {
+    display: block;
+  }
+
+  &--lg {
+    padding: 0.75em 3.5em;
+  }
+
+  &--primary {
+    background-color: $color__primary;
+    border-color: $color__primary;
+    color: $color__white;
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $color__primary--dark;
+      border-color: $color__primary--dark;
+      color: $color__white;
+    }
+  }
+
+  &--white {
+    background-color: $color__white;
+    border-color: $color__white;
+    color: $bs-color__text;
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $color__off-white;
+      border-color: $color__off-white;
+      color: $bs-color__text;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+  }
+
+  // Thank you Robert!
+  // https://stackoverflow.com/questions/47652849
+  &--primary#{&}--outline {
+    color: $color__primary;
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $color__primary;
+      border-color: $color__primary;
+      color: $color__white;
+    }
+  }
+
+  &--white#{&}--outline {
+    color: $color__white;
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $color__white;
+      border-color: $color__white;
+      color: $bs-color__text;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.utw-article {
+  background-color: $color__off-white;
+  padding: 8em;
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+
+  &__tagline {
+    display: inline-block;
+    margin-bottom: 7em;
+  }
+}

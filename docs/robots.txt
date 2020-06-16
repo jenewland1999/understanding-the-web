@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://jenewland1999.github.io/understanding-the-web/sitemap.xml

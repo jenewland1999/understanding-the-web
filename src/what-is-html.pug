@@ -1,0 +1,35 @@
+extends layout.pug
+
+block prepend title
+  - const title = "What is HTML?"
+
+block append stylesheets
+  link(rel="stylesheet" href=path + "static/stylesheets/bundle.min.css")
+  
+block content
+  main.utw-content.utw-container
+    section.utw-container.utw-px-0
+      article.utw-article
+        h2.utw-article__title#what-is-html What is HTML?
+        em.utw-article__tagline It's magic!
+        h3.utw-article__heading#introduction Introduction to Hypertext Mark-up Language
+        p.utw-article__paragraph.
+          Hypertext Mark-up Language or HTML, as it’s more commonly referred to as, is the standardized language responsible for display this and every other web page on the World Wide Web (WWW). It gives the initial layout to the page and describes the content on the web page. HTML is the number one mark up language used in today’s world. HTML uses a concept known as tags. Each element in the document (most of the time) has both a opening and closing tag. Here’s an example of a html tag #[code.utw-code &lt;html&gt;] and it’s corresponding closing tag #[code.utw-code &lt;/html&gt;].
+        h3.utw-article__heading#tag-anatomy HTML Tag Anatomy
+        p.utw-article__paragraph.
+          As mentioned above, HTML is comprised of many different tags. These tags might seem quite alien to any regular computer user. So, here’s a breakdown of both regular tags and self closing tags and the different components of it. It’s worth noting, the diagram bellow is for the XHTML mark-up language, but they’re more or less the same. The only different between XHTML and HTML 5 (The current version of HTML) is that self closing tags doesn’t require a forward slash before the closing angle bracket.
+        p.utw-article__paragraph.
+          Also, it’s worth noting that anything between the opening and closing tag is known as the content.
+        figure.utw-figure
+          img.utw-figure__img(src=path + "static/images/basic-anatomy-of-xhtml-elements.png" alt="XHTML Tag Anatomy")
+          figcaption.utw-figure__cap.
+            This image is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike license. Credits to #[a.utw-link(href="http://mrsglover-techclass.weebly.com/") Mrs. Glover's Tech Class]. 
+        h3.utw-article__heading#bringing-web-forward HTML5 - Bringing the Web Forward
+        figure.utw-figure.utw-figure--float-right
+          img.utw-figure__img(src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png", alt="HTML5 Logo")
+          figcaption.utw-figure__cap.
+            HTML5 Logo designed by W3C.
+        p.utw-article__paragraph.
+          HTML5 is the latest revision of the HTML standard. It not only further refines the specification for HTML but brings the web forward into the 21st century with a wider variety of media types like videos and scalable vector graphics (SVG). Not to mention, adding more semantic tags such as header, footer, article and so forth. These semantic tags are purely for as described semantics. They help someone that looks at the mark-up or a search engine understand what is contained within the specific element, rather than using classes and ids of various names to identify them.
+        p.utw-article__paragraph.
+          HTML5 was also given a branding page, found #[a.utw-link(href="https://www.w3.org/html/logo/") here], as well as a logo (to right) and marketing scheme.
